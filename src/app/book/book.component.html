@@ -1,0 +1,69 @@
+
+<p-toast [style]="{marginTop: '50px'}" [baseZIndex]="9999999"></p-toast>
+
+<p-table [value]="product">
+    <ng-template pTemplate="header">
+        <tr style="background-color: gray;
+        text-align: left;">
+            <th style="border-right: 2px solid #fff!important;">Id</th>
+            <th style="border-right: 2px solid #fff!important;">First Name</th>
+            <th style="border-right: 2px solid #fff!important;">Last Name</th>
+            <th style="border-right: 2px solid #fff!important;">primary_Email</th>
+            <th style="border-right: 2px solid #fff!important;">Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr style="border-bottom: 1px solid gray;">
+            <td>{{product.id}}</td>
+            <td>{{product.first_name}}</td>
+            <td>{{product.last_name}}</td>
+            <td>{{product.primary_Email}}</td>
+            <td>
+                <button (click)="DeleteId(product.id)" style="cursor: pointer;">Delete</button>
+                <button (click)="getDataById(product.id)" style="margin: 0px 0px 0px 5px;cursor: pointer;">Edit</button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<button class="addbutton" (click)="openAddModel()">Add</button>
+<p-dialog header="Edit" [(visible)]="displayEditModel" styleClass="mydialog" position="right"  [modal]="true" [style]="{width: '50vw'}"  [baseZIndex]="10000">
+    <form [formGroup]="updateBook" (ngSubmit)="submitBook(updateBook.value)">
+    <div>
+        <input id="input" type="text" 
+                            class="input-box1" pInputText formControlName="firstName">
+    </div>
+    <div>
+        <input id="input" type="text" 
+                            class="input-box1" pInputText formControlName="lastName">
+    </div>
+    <div>
+        <input id="input" type="text" 
+                            class="input-box1" pInputText formControlName="primaryEmail">
+    </div>
+    <p-footer>
+        <button (click)="close();">cancel</button>
+        <button type="submit">save</button>
+    </p-footer>
+</form>
+</p-dialog>
+
+<p-dialog header="Add" [(visible)]="displayAddModel" styleClass="mydialog" position="right"  [modal]="true" [style]="{width: '50vw'}"  [baseZIndex]="10000">
+    <form [formGroup]="addBook" (ngSubmit)="submitAdd(addBook.value)">
+    <div>
+        <input id="input" type="text" 
+                            class="input-box1" pInputText formControlName="firstName">
+    </div>
+    <div>
+        <input id="input" type="text" 
+                            class="input-box1" pInputText formControlName="lastName">
+    </div>
+    <div>
+        <input id="input" type="text" 
+                            class="input-box1" pInputText formControlName="primaryEmail">
+    </div>
+    <p-footer>
+        <button (click)="closeadd();">cancel</button>
+        <button type="submit">Add</button>
+    </p-footer>
+</form>
+</p-dialog>
