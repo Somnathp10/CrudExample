@@ -1,0 +1,55 @@
+
+     .paraLayoutPopupToggel {
+        font-size: 12.5px !important;
+        margin-top: 6px !important;
+        margin-left: 5px !important;
+        font-family: Roboto !important;
+      }
+   
+      .modeldialog{
+      }
+         
+      .p-dialog .p-dialog-header {
+         align-items: center;
+         display: flex;
+         flex-shrink: 0;
+         justify-content: space-between;
+         background-color: #bdbdc0 !important;
+         height: 29px;
+     }
+ 
+     .input-box1 {
+         background-color: white;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         transition: 0.3s;
+         height: 24px !important;
+         border: 1px solid #cdcdcd !important;
+         width: 700px !important;
+         
+       }
+         .mydialog {
+             width: 50vw;
+ 
+            
+         }
+         
+         @media screen and (max-width: 40em) {
+             .mydialog {
+                 width: 75vw;
+             }
+         }
+ 
+         .addbutton{
+             float: right;
+             cursor: pointer;
+             /* margin: 0px 0px 0px 2px; */
+             background-color: blue;
+             color: white;
+             border: none;
+             font-size: 13px;
+             width: 100px;
+             height: 20px;
+             /* padding: 3px; */
+             margin: 1px;
+         }
+   

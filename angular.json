@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "curdOper"
+    }
+  },
+  "defaultProject": "curdOper",
+  "cli": {
+    "analytics": "04add5c6-64e1-4e38-84b2-ecaf8e75ca42"
+  }
 }
